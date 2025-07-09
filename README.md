@@ -11,7 +11,6 @@ Tools Used
 Files Included
 •	Raw_Data.csv – Original unprocessed HR data.
 •	Cleaned_Data.xlsx – Data after Power Query transformations.
-•	HR_Dashboard.xlsx – Final interactive Excel dashboard.
 •	Screenshots/ – Visual walkthroughs of the dashboard and cleaning process.
 
 Skills Demonstrated
