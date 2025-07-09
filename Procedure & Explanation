@@ -1,0 +1,33 @@
+Project Summary: Employee Performance Analysis using Excel + Power Query
+
+This project demonstrates end-to-end data transformation and dashboarding using Microsoft Excel and Power Query. The goal was to analyze employee performance based on salary, bonus, department, and employment status, and turn raw HR data into actionable insights.
+
+Step-by-Step Workflow
+	1.	Data Loading and Preparation
+	•	Loaded raw data into Excel and opened it in Power Query using “Enter Data” → “Use First Row as Headers.”
+	•	Checked and corrected data types: text for names and departments, whole numbers for salary/bonus, date for hire dates.
+	•	Removed duplicate names (if any) to avoid inconsistencies.
+	•	Filtered out employees marked as “Resigned” to focus only on active staff.
+	
+2.	Data Cleaning and Transformation
+	•	Created Conditional Columns:
+	•	Bonus Status: If Bonus > 6000 → “Star Bonus”, else → “Standard Bonus”
+	•	Retention Status: If Status = “Active” → “Still with us”, else → “Left”
+	•	Calculated Employees per Department (using Group By on Department, counting rows)
+	•	Calculated Average Bonus by Performance (using Group By on Performance column)
+	•	Counted Resigned Employees per Department (filtered on Status, then grouped by Department)
+	•	Computed Tenure: Time since hiring using DateTime.LocalNow() - [Hire Date]
+	
+3.	Interactive Dashboard Elements
+	•	Added Dropdown Filters using Data Validation for departments
+	•	Used Conditional Formatting to highlight the highest bonus (via =MAX(Bonus) logic)
+	•	Generated Dynamic Summaries using TEXTJOIN: =TEXTJOIN(" ", TRUE, [@Name], "from", [@Department], "got a", [@Bonus], "as bonus and", [@Performance], "performance.")
+
+4.	Documentation and Output
+	•	Screenshots were taken at each step to show raw data, cleaned version, and final dashboard output
+	•	Clean file structure was maintained with:
+	•	Raw_Data.xlsx
+	•	Cleaned_Data.xlsx
+	•	PowerQuery_Steps.png
+
+This project not only displays data transformation proficiency but also shows clear understanding of business reporting and storytelling through data.
